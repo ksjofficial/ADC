@@ -10,6 +10,11 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-8">
+            <img 
+              src="input_file_38.png" 
+              alt="Africa Digital Festival Logo" 
+              className="h-16 w-auto invert opacity-80"
+            />
             <div className="space-y-2">
               <span className="text-[#00f2ea] text-xs font-black tracking-[0.4em] uppercase">Africa Digital Festival</span>
               <h2 className="text-8xl md:text-[120px] font-black tracking-tighter uppercase leading-[0.8]">ADC</h2>

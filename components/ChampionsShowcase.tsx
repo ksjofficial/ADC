@@ -5,6 +5,10 @@ import { Champion } from '../types';
 
 const ImageWithFallback = ({ src, alt, className }: { src: string | undefined | null, alt: string, className: string }) => {
   const [error, setError] = useState(false);
+
+  useEffect(() => {
+    setError(false);
+  }, [src]);
   
   const renderPlaceholder = () => (
     <div className={`bg-neutral-900 flex flex-col items-center justify-center p-8 ${className}`}>
@@ -93,27 +97,27 @@ const ChampionsShowcase: React.FC = () => {
   }, [selectedChampion, closeModal]);
 
   return (
-    <section id="champions" className="py-32 bg-white relative">
+    <section id="champions" className="py-24 md:py-32 bg-white relative">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50/50 -z-10 pointer-events-none"></div>
 
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-28 gap-12">
-          <div className="max-w-2xl border-l-[16px] border-black pl-10">
-            <h2 className="text-7xl md:text-9xl font-black text-black tracking-tighter mb-8 uppercase leading-[0.85]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-28 gap-12">
+          <div className="max-w-2xl border-l-[12px] md:border-l-[16px] border-black pl-8 md:pl-10">
+            <h2 className="text-6xl sm:text-7xl md:text-9xl font-black text-black tracking-tighter mb-8 uppercase leading-[0.85]">
               The Class <br /> of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2ea] via-[#ff00ff] to-[#ff9900]">2025</span>
             </h2>
-            <p className="text-2xl text-gray-500 font-medium max-w-lg leading-relaxed font-outfit">
+            <p className="text-xl md:text-2xl text-gray-500 font-medium max-w-lg leading-relaxed font-outfit">
               Africa Digital Festival 2026 presents: The pioneers of our digital sovereignty. One continent, 50 nations, 50 elite champions.
             </p>
           </div>
           
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-7 py-3 rounded-none text-[11px] font-black tracking-[0.2em] transition-all border-2 ${
+                className={`px-4 py-2 sm:px-7 sm:py-3 rounded-none text-[10px] sm:text-[11px] font-black tracking-[0.2em] transition-all border-2 ${
                   filter === cat 
                     ? 'bg-black text-white border-black shadow-2xl scale-105' 
                     : 'bg-white text-gray-400 border-gray-100 hover:border-black hover:text-black'
@@ -125,14 +129,14 @@ const ChampionsShowcase: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-10 gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 md:gap-x-10 gap-y-16 md:gap-y-24">
           {filteredChampions.map((champion, idx) => (
             <div 
               key={idx} 
               onClick={() => setSelectedChampion(champion)}
               className="group cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:rotate-2 will-change-transform flex flex-col h-full"
             >
-              <div className="aspect-[1/1.3] overflow-hidden mb-10 rounded-none relative transition-all duration-500 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-transparent group-hover:border-black/5 bg-neutral-900">
+              <div className="aspect-[1/1.3] overflow-hidden mb-6 md:mb-10 rounded-none relative transition-all duration-500 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-transparent group-hover:border-black/5 bg-neutral-900">
                 <ImageWithFallback 
                   src={champion.imageUrl} 
                   alt={champion.name} 
@@ -152,12 +156,12 @@ const ChampionsShowcase: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-4 px-2 flex-grow flex flex-col">
+              <div className="space-y-3 sm:space-y-4 px-2 flex-grow flex flex-col">
                 <div className="flex justify-between items-start">
-                   <h3 className="text-2xl font-black text-black uppercase tracking-tighter leading-none group-hover:text-[#ff00ff] transition-colors duration-300">
+                   <h3 className="text-xl sm:text-2xl font-black text-black uppercase tracking-tighter leading-none group-hover:text-[#ff00ff] transition-colors duration-300">
                      {champion.name}
                    </h3>
-                   <div className="flex items-center space-x-2">
+                   <div className="flex items-center space-x-2 flex-shrink-0 ml-2">
                       <img 
                         src={`https://flagcdn.com/w40/${champion.countryCode.toLowerCase()}.png`} 
                         alt={champion.country}
@@ -172,7 +176,6 @@ const ChampionsShowcase: React.FC = () => {
                   {champion.role}
                 </p>
                 
-                {/* Truncated Bio on Card */}
                 <p className="text-gray-500 text-xs font-medium leading-relaxed font-outfit line-clamp-2">
                    {champion.bio}
                 </p>
@@ -200,9 +203,9 @@ const ChampionsShowcase: React.FC = () => {
           <div className="relative w-full max-w-7xl bg-white h-full max-h-[95vh] overflow-y-auto rounded-none flex flex-col lg:flex-row shadow-[0_0_120px_rgba(0,0,0,0.6)] border border-white/5 animate-in zoom-in-95 duration-500 slide-in-from-bottom-10">
             <button 
               onClick={closeModal}
-              className="absolute top-8 right-8 z-30 w-16 h-16 flex items-center justify-center bg-black text-white hover:bg-[#ff00ff] transition-all hover:scale-110 active:scale-95"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-black text-white hover:bg-[#ff00ff] transition-all hover:scale-110 active:scale-95"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -214,15 +217,15 @@ const ChampionsShowcase: React.FC = () => {
                 className="w-full h-full opacity-90 transition-transform duration-[2000ms] group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-12 left-12 flex flex-col space-y-4">
-                 <img src="input_file_38.png" className="h-20 invert mb-2 opacity-50" alt="ADF" />
+              <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 flex flex-col space-y-4">
+                 <img src="input_file_38.png" className="h-16 sm:h-20 invert mb-2 opacity-50" alt="ADF" />
                  <div className="px-6 py-2 border-2 border-[#00f2ea] text-[#00f2ea] font-black text-xs tracking-widest w-fit uppercase">Class of 2025</div>
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2 p-10 lg:p-24 flex flex-col justify-center bg-white">
-              <div className="mb-16">
-                <div className="flex flex-wrap items-center gap-6 mb-10">
+            <div className="w-full lg:w-1/2 p-6 sm:p-12 lg:p-24 flex flex-col justify-center bg-white">
+              <div className="mb-12 sm:mb-16">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
                   <div className="flex items-center space-x-3 px-5 py-2 bg-[#00f2ea] text-black shadow-lg">
                     <img 
                       src={`https://flagcdn.com/w80/${selectedChampion.countryCode.toLowerCase()}.png`} 
@@ -239,11 +242,11 @@ const ChampionsShowcase: React.FC = () => {
                   </span>
                 </div>
                 
-                <h2 className="text-6xl lg:text-[100px] font-black text-black uppercase tracking-tighter leading-[0.8] mb-8">
+                <h2 className="text-5xl sm:text-6xl lg:text-[100px] font-black text-black uppercase tracking-tighter leading-[0.8] mb-8">
                   {selectedChampion.name}
                 </h2>
-                <p className="text-2xl font-bold text-gray-400 font-syne uppercase tracking-tight leading-snug">{selectedChampion.role}</p>
-                <div className="w-32 h-4 bg-black mt-12 flex">
+                <p className="text-xl sm:text-2xl font-bold text-gray-400 font-syne uppercase tracking-tight leading-snug">{selectedChampion.role}</p>
+                <div className="w-32 h-2 sm:h-4 bg-black mt-8 sm:mt-12 flex">
                     <div className="w-1/3 h-full bg-[#00f2ea]"></div>
                     <div className="w-1/3 h-full bg-[#ff00ff]"></div>
                     <div className="w-1/3 h-full bg-[#ff9900]"></div>
@@ -251,13 +254,11 @@ const ChampionsShowcase: React.FC = () => {
               </div>
 
               <div className="max-w-3xl">
-                {/* Expandable Bio in Modal */}
-                <ExpandableBio 
-                   text={selectedChampion.bio} 
-                   className="text-gray-700 leading-relaxed text-2xl font-medium mb-16 font-outfit"
-                />
+                <p className="text-gray-700 leading-relaxed text-lg sm:text-xl font-medium mb-12 sm:mb-16 font-outfit">
+                   {selectedChampion.bio}
+                </p>
                 
-                <div className="grid grid-cols-3 gap-8 border-t-[6px] border-black pt-16">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t-[6px] border-black pt-12 sm:pt-16">
                   <a href={selectedChampion.socials.linkedin || "#"} target="_blank" className="flex flex-col group/link">
                     <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Professional</span>
                     <span className="text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#00f2ea] pb-2 w-fit transition-all">LinkedIn</span>
