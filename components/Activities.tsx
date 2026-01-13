@@ -20,6 +20,10 @@ const Activities: React.FC = () => {
               </h2>
             </div>
 
+            <p className="text-xl text-gray-400 leading-relaxed font-outfit font-medium -mt-8">
+              Being named a Digital Champion is more than an award—it's an induction into a year-long program of high-impact engagements. The initiative is designed to foster continental collaboration, accelerate growth, and influence policy at the highest levels.
+            </p>
+
             <div className="space-y-12">
               {ACTIVITIES.map((activity) => (
                 <div key={activity.id} className="flex gap-10 group relative">

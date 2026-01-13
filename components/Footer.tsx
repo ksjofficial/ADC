@@ -11,9 +11,9 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-8">
             <img 
-              src="input_file_38.png" 
-              alt="Africa Digital Festival Logo" 
-              className="h-16 w-auto invert opacity-80"
+              src="input_file_40.png" 
+              alt="Africa's 50 Digital Champions Logo" 
+              className="h-16 w-auto opacity-90"
             />
             <div className="space-y-2">
               <span className="text-[#00f2ea] text-xs font-black tracking-[0.4em] uppercase">Africa Digital Festival</span>

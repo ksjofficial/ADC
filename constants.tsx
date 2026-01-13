@@ -13,10 +13,10 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const ACTIVITIES: Activity[] = [
-  { id: 1, title: 'Champions Mixer', description: 'Exclusive networking opportunities with top-tier digital leaders and investors across the continent.' },
-  { id: 2, title: 'Masterclass', description: 'Deep-dive sessions focused on policy acceleration, digital economy trends, and scaling innovative solutions.' },
-  { id: 3, title: 'Exhibitions', description: 'A platform for Champions to showcase their products and services to potential partners and the media.' },
-  { id: 4, title: 'Network8', description: 'Curated site visits to leading tech hubs and government institutions to foster regional collaboration.' },
+  { id: 1, title: 'High-Stakes Networking', description: 'Exclusive, closed-door networking opportunities with top-tier investors, policymakers, and ecosystem builders from across the continent and beyond.' },
+  { id: 2, title: 'Masterclass Series', description: 'Deep-dive sessions led by global experts on venture scaling, AI ethics, digital trade policy, and public-private partnerships to sharpen their competitive edge.' },
+  { id: 3, title: 'Continental Showcase', description: 'A global platform for Champions to showcase their ventures to international media, corporate partners, and investors during the annual Africa Digital Festival.' },
+  { id: 4, title: 'Policy & Innovation Tours', description: 'Curated, fact-finding missions to leading African tech hubs and government institutions to bridge the gap between innovation and regulation.' },
 ];
 
 export const PARTNERS = [
@@ -32,7 +32,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder & Manager, SyLabs",
     country: "Algeria",
     countryCode: "dz",
-    imageUrl: "input_file_0.png",
+    imageUrl: "input_file_64.jpeg",
     category: "Entrepreneurship",
     bio: "A pioneer in Algeria's startup ecosystem, Abdellah leads SyLabs, a premier innovation hub fostering tech talent and entrepreneurial growth in North Africa.",
     socials: { linkedin: "#", twitter: "#" }
@@ -42,7 +42,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Innovator",
     country: "Angola",
     countryCode: "ao",
-    imageUrl: "input_file_1.png",
+    imageUrl: "input_file_72.jpeg",
     category: "Software",
     bio: "Technology leader championing Angola's digital transformation initiatives and fostering local tech talent.",
     socials: { linkedin: "#" }
@@ -52,7 +52,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister of Digital Economy",
     country: "Benin",
     countryCode: "bj",
-    imageUrl: "input_file_2.png",
+    imageUrl: "input_file_46.jpeg",
     category: "Policy",
     bio: "Government Minister working tirelessly on digital innovation and ICT development, positioning Benin as a digital hub in West Africa.",
     socials: { twitter: "#", linkedin: "#" }
@@ -62,7 +62,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Champion",
     country: "Botswana",
     countryCode: "bw",
-    imageUrl: "input_file_3.png",
+    imageUrl: "input_file_69.jpeg",
     category: "Infrastructure",
     bio: "Advancing technology adoption and innovation across Botswana's public and private sectors.",
     socials: { linkedin: "#" }
@@ -72,7 +72,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Transformation Lead",
     country: "Burkina Faso",
     countryCode: "bf",
-    imageUrl: "input_file_4.png",
+    imageUrl: "input_file_76.jpeg",
     category: "Infrastructure",
     bio: "Leading Burkina Faso's efforts in digital infrastructure expansion and e-government services.",
     socials: { linkedin: "#" }
@@ -82,7 +82,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Technology Leader",
     country: "Burundi",
     countryCode: "bi",
-    imageUrl: "input_file_5.png",
+    imageUrl: "input_file_66.jpeg",
     category: "Policy",
     bio: "Driving digital transformation initiatives in Burundi with a focus on sustainable tech infrastructure.",
     socials: { website: "#" }
@@ -92,7 +92,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Economy Advocate",
     country: "Cameroon",
     countryCode: "cm",
-    imageUrl: "input_file_6.png",
+    imageUrl: "input_file_60.jpeg",
     category: "Education",
     bio: "Promoting innovation and digital economy growth through advocacy and community leadership in Cameroon.",
     socials: { linkedin: "#" }
@@ -102,7 +102,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Prime Minister",
     country: "Cabo Verde",
     countryCode: "cv",
-    imageUrl: "input_file_7.png",
+    imageUrl: "input_file_62.jpeg",
     category: "Policy",
     bio: "Leading Cabo Verde's digital transformation strategy with a vision to become a digital gateway for the mid-Atlantic.",
     socials: { website: "https://presidencia.cv" }
@@ -112,7 +112,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Tech Policy Advisor",
     country: "CAR",
     countryCode: "cf",
-    imageUrl: "input_file_8.png",
+    imageUrl: "https://picsum.photos/seed/cf_champ/800/1000",
     category: "Policy",
     bio: "Advocating for digital rights and infrastructure development in the Central African Republic.",
     socials: { twitter: "#" }
@@ -122,7 +122,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Technology Innovator",
     country: "Chad",
     countryCode: "td",
-    imageUrl: "input_file_9.png",
+    imageUrl: "https://picsum.photos/seed/td_champ/800/1000",
     category: "Software",
     bio: "Championing digital solutions and ICT development to solve local challenges in Chad's emerging tech sector.",
     socials: { twitter: "#" }
@@ -132,7 +132,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Innovation Hub Founder",
     country: "Comoros",
     countryCode: "km",
-    imageUrl: "input_file_10.png",
+    imageUrl: "https://picsum.photos/seed/km_champ/800/1000",
     category: "Entrepreneurship",
     bio: "Fostering a new generation of Comorian tech talent through community hubs and digital literacy programs.",
     socials: { website: "#" }
@@ -142,7 +142,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, VMK",
     country: "Congo",
     countryCode: "cg",
-    imageUrl: "input_file_11.png",
+    imageUrl: "input_file_70.jpeg",
     category: "Hardware",
     bio: "Entrepreneur and innovator, founder of Africa's first tablet computer brand.",
     socials: { linkedin: "#", website: "#" }
@@ -152,7 +152,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Economy Leader",
     country: "Côte d'Ivoire",
     countryCode: "ci",
-    imageUrl: "input_file_12.png",
+    imageUrl: "input_file_52.jpeg",
     category: "Entrepreneurship",
     bio: "Advancing technology and innovation initiatives in Côte d'Ivoire.",
     socials: { linkedin: "#" }
@@ -162,7 +162,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, Rawbank",
     country: "DRC",
     countryCode: "cd",
-    imageUrl: "input_file_13.png",
+    imageUrl: "input_file_43.jpeg",
     category: "Fintech",
     bio: "Pioneering digital banking solutions in the Democratic Republic of Congo.",
     socials: { linkedin: "#" }
@@ -172,7 +172,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "ICT Champion",
     country: "Djibouti",
     countryCode: "dj",
-    imageUrl: "input_file_14.png",
+    imageUrl: "input_file_67.jpeg",
     category: "Policy",
     bio: "Working to advance Djibouti's technology sector through strategic ICT initiatives.",
     socials: { linkedin: "#" }
@@ -182,7 +182,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Tech Entrepreneur",
     country: "Egypt",
     countryCode: "eg",
-    imageUrl: "input_file_15.png",
+    imageUrl: "input_file_78.jpeg",
     category: "Fintech",
     bio: "A leading figure in Egypt's tech ecosystem, contributing to high-impact digital ventures.",
     socials: { linkedin: "#", twitter: "#" }
@@ -192,7 +192,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, Atom",
     country: "Equatorial Guinea",
     countryCode: "gq",
-    imageUrl: "input_file_16.png",
+    imageUrl: "https://picsum.photos/seed/gq_champ/800/1000",
     category: "Entrepreneurship",
     bio: "Spearheading Equatorial Guinea's first major tech startup, focusing on digital services.",
     socials: { linkedin: "#" }
@@ -202,7 +202,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Strategist",
     country: "Eritrea",
     countryCode: "er",
-    imageUrl: "input_file_17.png",
+    imageUrl: "https://picsum.photos/seed/er_champ/800/1000",
     category: "Infrastructure",
     bio: "Advocating for technological resilience and digital adaptation in Eritrea.",
     socials: { twitter: "#" }
@@ -212,7 +212,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister for ICT",
     country: "Eswatini",
     countryCode: "sz",
-    imageUrl: "input_file_18.png",
+    imageUrl: "input_file_74.jpeg",
     category: "Policy",
     bio: "Leading Eswatini's digital transformation agenda.",
     socials: { website: "#" }
@@ -222,7 +222,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, Anyone Can Code",
     country: "Ethiopia",
     countryCode: "et",
-    imageUrl: "input_file_19.png",
+    imageUrl: "https://picsum.photos/seed/et_champ/800/1000",
     category: "Education",
     bio: "Prominent tech leader in Ethiopia, empowering youth through coding.",
     socials: { twitter: "#", linkedin: "#" }
@@ -232,7 +232,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Champion",
     country: "Gabon",
     countryCode: "ga",
-    imageUrl: "input_file_20.png",
+    imageUrl: "input_file_59.jpeg",
     category: "Education",
     bio: "Driving innovation initiatives across Gabonese industries.",
     socials: { linkedin: "#" }
@@ -242,7 +242,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, Kids in Technology",
     country: "The Gambia",
     countryCode: "gm",
-    imageUrl: "input_file_21.png",
+    imageUrl: "input_file_68.jpeg",
     category: "Education",
     bio: "Social entrepreneur empowering youth in The Gambia.",
     socials: { twitter: "#", website: "#" }
@@ -252,7 +252,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Innovation Leader",
     country: "Ghana",
     countryCode: "gh",
-    imageUrl: "input_file_22.png",
+    imageUrl: "input_file_49.jpeg",
     category: "Software",
     bio: "Advancing Ghana's tech ecosystem through software innovation.",
     socials: { linkedin: "#" }
@@ -262,7 +262,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, Tulip Industries",
     country: "Guinea",
     countryCode: "gn",
-    imageUrl: "input_file_23.png",
+    imageUrl: "https://picsum.photos/seed/gn_champ/800/1000",
     category: "Hardware",
     bio: "Innovative entrepreneur developing hardware solutions in Guinea.",
     socials: { website: "#", linkedin: "#" }
@@ -272,7 +272,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Transformation Advocate",
     country: "Guinea-Bissau",
     countryCode: "gw",
-    imageUrl: "input_file_24.png",
+    imageUrl: "input_file_54.jpeg",
     category: "Policy",
     bio: "Advancing technology adoption in Guinea-Bissau.",
     socials: { linkedin: "#" }
@@ -282,7 +282,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Entrepreneur",
     country: "Kenya",
     countryCode: "ke",
-    imageUrl: "input_file_25.png",
+    imageUrl: "input_file_53.jpeg",
     category: "Fintech",
     bio: "Driving innovation in Kenya's Silicon Savannah.",
     socials: { twitter: "#", linkedin: "#" }
@@ -292,19 +292,19 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Government Official",
     country: "Lesotho",
     countryCode: "ls",
-    imageUrl: "input_file_26.png",
+    imageUrl: "input_file_57.jpeg",
     category: "Policy",
     bio: "Championing digital transformation in Lesotho.",
     socials: { linkedin: "#" }
   },
   {
-    name: "C. Jones & M. Zaid",
-    role: "Innovation Leaders",
+    name: "Christopher B. Jones",
+    role: "CEO of Ezee Markets",
     country: "Liberia",
     countryCode: "lr",
-    imageUrl: "input_file_27.png",
-    category: "Infrastructure",
-    bio: "Advancing ICT infrastructure in Liberia.",
+    imageUrl: "input_file_75.jpeg",
+    category: "Entrepreneurship",
+    bio: "Driving e-commerce and digital marketplace innovation in Liberia through his leadership at Ezee Markets.",
     socials: { website: "#" }
   },
   {
@@ -312,7 +312,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Program Coordinator, Lybotics",
     country: "Libya",
     countryCode: "ly",
-    imageUrl: "input_file_28.png",
+    imageUrl: "input_file_63.jpeg",
     category: "Education",
     bio: "Pioneering robotics education and competitive tech programs in Libya.",
     socials: { twitter: "#", website: "#" }
@@ -322,7 +322,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Tech Entrepreneur",
     country: "Madagascar",
     countryCode: "mg",
-    imageUrl: "input_file_29.png",
+    imageUrl: "input_file_56.jpeg",
     category: "Software",
     bio: "Driving Madagascar's digital ecosystem through software innovation.",
     socials: { linkedin: "#" }
@@ -332,7 +332,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, NICO Technologies",
     country: "Malawi",
     countryCode: "mw",
-    imageUrl: "input_file_30.png",
+    imageUrl: "input_file_51.jpeg",
     category: "Infrastructure",
     bio: "Leading digital innovation to bridge connectivity gaps in Malawi.",
     socials: { linkedin: "#" }
@@ -342,7 +342,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, Suadela",
     country: "Mali",
     countryCode: "ml",
-    imageUrl: "input_file_31.png",
+    imageUrl: "https://picsum.photos/seed/ml_champ/800/1000",
     category: "Entrepreneurship",
     bio: "Entrepreneur championing digital solutions for social impact in Mali.",
     socials: { linkedin: "#" }
@@ -352,7 +352,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Innovation Lead",
     country: "Mauritania",
     countryCode: "mr",
-    imageUrl: "input_file_32.png",
+    imageUrl: "https://picsum.photos/seed/mr_champ/800/1000",
     category: "Policy",
     bio: "Shaping Mauritania's digital future through ecosystem building.",
     socials: { linkedin: "#" }
@@ -362,7 +362,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, Black Swan",
     country: "Mauritius",
     countryCode: "mu",
-    imageUrl: "input_file_33.png",
+    imageUrl: "https://picsum.photos/seed/mu_champ/800/1000",
     category: "Software",
     bio: "Driving digital transformation in Mauritius' tech sector.",
     socials: { website: "#" }
@@ -372,7 +372,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Digital Economy Leader",
     country: "Morocco",
     countryCode: "ma",
-    imageUrl: "input_file_34.png",
+    imageUrl: "input_file_41.jpeg",
     category: "Entrepreneurship",
     bio: "Advancing Morocco's position as a regional tech hub.",
     socials: { twitter: "#", linkedin: "#" }
@@ -382,7 +382,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Founder, Girls Can Code",
     country: "Mozambique",
     countryCode: "mz",
-    imageUrl: "input_file_35.png",
+    imageUrl: "input_file_55.jpeg",
     category: "Education",
     bio: "Empowering girls through technology education in Mozambique.",
     socials: { linkedin: "#" }
@@ -392,7 +392,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Head of Strategy, MTC Namibia",
     country: "Namibia",
     countryCode: "na",
-    imageUrl: "input_file_36.png",
+    imageUrl: "input_file_61.jpeg",
     category: "Infrastructure",
     bio: "Leading digital strategy for Namibia's premier telecommunications provider.",
     socials: { linkedin: "#" }
@@ -402,7 +402,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister of State",
     country: "Niger",
     countryCode: "ne",
-    imageUrl: "input_file_37.png",
+    imageUrl: "https://picsum.photos/seed/ne_champ/800/1000",
     category: "Policy",
     bio: "Championing digital transformation for Niger's development.",
     socials: { website: "#" }
@@ -412,7 +412,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, iverify.ng",
     country: "Nigeria",
     countryCode: "ng",
-    imageUrl: "https://picsum.photos/seed/ng_champ/800/1000",
+    imageUrl: "input_file_50.jpeg",
     category: "Fintech",
     bio: "Digital identity champion advancing verification solutions in Nigeria.",
     socials: { linkedin: "#", website: "https://iverify.ng" }
@@ -422,7 +422,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister of ICT",
     country: "Rwanda",
     countryCode: "rw",
-    imageUrl: "https://picsum.photos/seed/rw_champ/800/1000",
+    imageUrl: "input_file_71.jpeg",
     category: "Policy",
     bio: "MIT-trained technology leader driving Rwanda's digital strategy.",
     socials: { twitter: "#", linkedin: "#" }
@@ -442,7 +442,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister of Education",
     country: "Sierra Leone",
     countryCode: "sl",
-    imageUrl: "https://picsum.photos/seed/sl_champ/800/1000",
+    imageUrl: "input_file_47.jpeg",
     category: "Policy",
     bio: "Innovation leader leveraging technology to transform education in Sierra Leone.",
     socials: { twitter: "#", linkedin: "#" }
@@ -452,7 +452,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, Hormuud Telecom",
     country: "Somalia",
     countryCode: "so",
-    imageUrl: "https://picsum.photos/seed/so_champ/800/1000",
+    imageUrl: "input_file_44.jpeg",
     category: "Infrastructure",
     bio: "Telecommunications leader advancing financial inclusion in Somalia.",
     socials: { website: "https://hormuud.com" }
@@ -462,7 +462,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Youth ICT Council",
     country: "South Africa",
     countryCode: "za",
-    imageUrl: "https://picsum.photos/seed/za_champ/800/1000",
+    imageUrl: "input_file_48.jpeg",
     category: "Education",
     bio: "Championing youth digital skills in South Africa.",
     socials: { linkedin: "#" }
@@ -472,7 +472,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Co-founder, Silabu",
     country: "Tanzania",
     countryCode: "tz",
-    imageUrl: "https://picsum.photos/seed/tz_champ/800/1000",
+    imageUrl: "input_file_42.jpeg",
     category: "Education",
     bio: "EdTech entrepreneur creating digital learning solutions in Tanzania.",
     socials: { website: "https://silabu.com" }
@@ -482,7 +482,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Minister for Digital Economy",
     country: "Togo",
     countryCode: "tg",
-    imageUrl: "https://picsum.photos/seed/tg_champ/800/1000",
+    imageUrl: "input_file_45.jpeg",
     category: "Policy",
     bio: "Digital transformation pioneer who launched the Novissi program in Togo.",
     socials: { twitter: "#", linkedin: "#" }
@@ -492,7 +492,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "Innovation Leader",
     country: "Tunisia",
     countryCode: "tn",
-    imageUrl: "https://picsum.photos/seed/tn_champ/800/1000",
+    imageUrl: "input_file_73.jpeg",
     category: "Software",
     bio: "Advancing Tunisia's technology sector through strategic leadership.",
     socials: { linkedin: "#" }
@@ -502,7 +502,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO & Co-founder, Numida",
     country: "Uganda",
     countryCode: "ug",
-    imageUrl: "https://picsum.photos/seed/ug_champ/800/1000",
+    imageUrl: "input_file_65.jpeg",
     category: "Fintech",
     bio: "Fintech entrepreneur providing credit solutions to small businesses in Uganda.",
     socials: { website: "https://numida.com", linkedin: "#" }
@@ -512,7 +512,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, ChitChat",
     country: "Zambia",
     countryCode: "zm",
-    imageUrl: "https://picsum.photos/seed/zm_champ/800/1000",
+    imageUrl: "input_file_58.jpeg",
     category: "Software",
     bio: "Building digital communication solutions in Zambia.",
     socials: { linkedin: "#", website: "https://chitchat.com" }
@@ -522,7 +522,7 @@ export const CHAMPIONS_2025: Champion[] = [
     role: "CEO, MoneyMart",
     country: "Zimbabwe",
     countryCode: "zw",
-    imageUrl: "input_file_39.png",
+    imageUrl: "input_file_38.jpeg",
     category: "Fintech",
     bio: "Financial services leader driving mobile money innovation in Zimbabwe.",
     socials: { linkedin: "#", website: "https://moneymart.co.zw" }

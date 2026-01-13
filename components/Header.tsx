@@ -12,9 +12,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <img 
-            src="input_file_38.png" 
-            alt="Africa Digital Festival Logo" 
-            className="h-12 md:h-14 w-auto invert brightness-0"
+            src="input_file_40.png" 
+            alt="Africa's 50 Digital Champions Logo" 
+            className="h-12 md:h-14 w-auto"
           />
         </div>
 

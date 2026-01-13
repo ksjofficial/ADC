@@ -11,13 +11,9 @@ const ImageWithFallback = ({ src, alt, className }: { src: string | undefined | 
   }, [src]);
   
   const renderPlaceholder = () => (
-    <div className={`bg-neutral-900 flex flex-col items-center justify-center p-8 ${className}`}>
-      <div className="relative flex flex-col items-center justify-center border border-white/10 p-10 opacity-30 group-hover:opacity-100 transition-all duration-700">
-         <img src="input_file_38.png" className="w-16 h-auto invert grayscale mb-6" alt="ADF Logo" />
-         <div className="w-12 h-1 bg-gradient-to-r from-[#00f2ea] to-[#ff00ff] mb-4"></div>
-         <span className="text-[10px] font-black text-white tracking-[0.4em] uppercase text-center leading-tight">
-           Elite <br /> Champion
-         </span>
+    <div className={`bg-black flex flex-col items-center justify-center p-8 ${className}`}>
+      <div className="relative flex flex-col items-center justify-center border-2 border-dashed border-white/20 p-10 transition-all duration-700 w-full h-full group-hover:border-[#00f2ea]">
+         <div className="w-16 h-1 bg-gradient-to-r from-[#00f2ea] to-[#ff00ff]"></div>
       </div>
     </div>
   );
@@ -32,7 +28,7 @@ const ImageWithFallback = ({ src, alt, className }: { src: string | undefined | 
         src={src} 
         alt={alt} 
         onError={() => setError(true)}
-        className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-1000 ease-out"
+        className="w-full h-full object-cover object-top grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500 ease-out"
       />
     </div>
   );
@@ -129,12 +125,12 @@ const ChampionsShowcase: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 md:gap-x-10 gap-y-16 md:gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 md:gap-x-10 gap-y-12 sm:gap-y-16 md:gap-y-24">
           {filteredChampions.map((champion, idx) => (
             <div 
               key={idx} 
               onClick={() => setSelectedChampion(champion)}
-              className="group cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:rotate-2 will-change-transform flex flex-col h-full"
+              className="group cursor-pointer transition-all duration-500 hover:scale-105 will-change-transform flex flex-col h-full"
             >
               <div className="aspect-[1/1.3] overflow-hidden mb-6 md:mb-10 rounded-none relative transition-all duration-500 group-hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border border-transparent group-hover:border-black/5 bg-neutral-900">
                 <ImageWithFallback 
@@ -176,12 +172,14 @@ const ChampionsShowcase: React.FC = () => {
                   {champion.role}
                 </p>
                 
-                <p className="text-gray-500 text-xs font-medium leading-relaxed font-outfit line-clamp-2">
-                   {champion.bio}
-                </p>
+                <ExpandableBio 
+                  text={champion.bio}
+                  limit={80}
+                  className="text-gray-500 text-xs font-medium leading-relaxed font-outfit"
+                />
                 
                 <div className="mt-auto pt-4">
-                  <div className="h-[3px] w-12 bg-gray-200 group-hover:w-full group-hover:bg-[#ff9900] transition-all duration-1000 mb-4"></div>
+                  <div className="h-[3px] w-12 bg-gray-200 group-hover:w-full group-hover:bg-[#ff9900] transition-all duration-500 mb-4"></div>
                   <button className="text-[10px] font-black uppercase tracking-widest text-black group-hover:text-[#ff00ff] transition-colors flex items-center space-x-2">
                     <span>Read Full Profile</span>
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -218,7 +216,6 @@ const ChampionsShowcase: React.FC = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none"></div>
               <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 flex flex-col space-y-4">
-                 <img src="input_file_38.png" className="h-16 sm:h-20 invert mb-2 opacity-50" alt="ADF" />
                  <div className="px-6 py-2 border-2 border-[#00f2ea] text-[#00f2ea] font-black text-xs tracking-widest w-fit uppercase">Class of 2025</div>
               </div>
             </div>
@@ -259,18 +256,39 @@ const ChampionsShowcase: React.FC = () => {
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t-[6px] border-black pt-12 sm:pt-16">
-                  <a href={selectedChampion.socials.linkedin || "#"} target="_blank" className="flex flex-col group/link">
-                    <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Professional</span>
-                    <span className="text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#00f2ea] pb-2 w-fit transition-all">LinkedIn</span>
-                  </a>
-                  <a href={selectedChampion.socials.twitter || "#"} target="_blank" className="flex flex-col group/link">
-                    <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Ecosystem</span>
-                    <span className="text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff00ff] pb-2 w-fit transition-all">X / Twitter</span>
-                  </a>
-                  <a href={selectedChampion.socials.website || "#"} target="_blank" className="flex flex-col group/link">
-                    <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Venture</span>
-                    <span className="text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff9900] pb-2 w-fit transition-all">Website</span>
-                  </a>
+                  {selectedChampion.socials.linkedin && (
+                    <a href={selectedChampion.socials.linkedin} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
+                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Professional</span>
+                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#00f2ea] pb-2 w-fit transition-all">
+                        LinkedIn
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                    </a>
+                  )}
+                  {selectedChampion.socials.twitter && (
+                    <a href={selectedChampion.socials.twitter} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
+                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Ecosystem</span>
+                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff00ff] pb-2 w-fit transition-all">
+                        X / Twitter
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                    </a>
+                  )}
+                  {selectedChampion.socials.website && (
+                    <a href={selectedChampion.socials.website} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
+                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Venture</span>
+                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff9900] pb-2 w-fit transition-all">
+                        Website
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

@@ -76,14 +76,14 @@ const Hero: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                   <div className="absolute bottom-12 left-12 right-12">
-                     <img src="input_file_38.png" className="h-28 w-auto invert brightness-0 grayscale mb-8 opacity-40 group-hover:opacity-100 transition-opacity duration-700" alt="ADF Logo" />
+                     <img src="input_file_40.png" className="h-20 w-auto mb-8 opacity-80 group-hover:opacity-100 transition-opacity duration-700" alt="Africa's 50 Digital Champions Logo" />
                      <p className="text-[#00f2ea] font-black text-sm tracking-[0.4em] uppercase mb-1">Featured Catalyst • {featuredChampion.country}</p>
                      <p className="text-white font-black text-3xl uppercase tracking-tighter">{featuredChampion.name}</p>
                   </div>
                 </>
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
-                   <img src="input_file_38.png" className="h-32 w-auto invert opacity-20 animate-pulse" alt="Loading" />
+                   <img src="input_file_40.png" className="h-32 w-auto opacity-20 animate-pulse" alt="Loading" />
                 </div>
               )}
            </div>
