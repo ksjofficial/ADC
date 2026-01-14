@@ -4,32 +4,11 @@ import { CHAMPIONS_2025 } from '../constants';
 import { Champion } from '../types';
 
 const ImageWithFallback = ({ src, alt, className }: { src: string | undefined | null, alt: string, className: string }) => {
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    setError(false);
-  }, [src]);
-  
-  const renderPlaceholder = () => (
+  return (
     <div className={`bg-black flex flex-col items-center justify-center p-8 ${className}`}>
       <div className="relative flex flex-col items-center justify-center border-2 border-dashed border-white/20 p-10 transition-all duration-700 w-full h-full group-hover:border-[#00f2ea]">
-         <div className="w-16 h-1 bg-gradient-to-r from-[#00f2ea] to-[#ff00ff]"></div>
+         <img src="input_file_40.png" alt="Africa's 50 Digital Champions Logo" className="h-24 w-auto opacity-20 group-hover:opacity-50 transition-opacity duration-500" />
       </div>
-    </div>
-  );
-
-  if (!src || error) {
-    return renderPlaceholder();
-  }
-
-  return (
-    <div className={`bg-neutral-900 flex items-center justify-center overflow-hidden ${className}`}>
-      <img 
-        src={src} 
-        alt={alt} 
-        onError={() => setError(true)}
-        className="w-full h-full object-cover object-top grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-500 ease-out"
-      />
     </div>
   );
 };
@@ -125,7 +104,7 @@ const ChampionsShowcase: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 md:gap-x-10 gap-y-12 sm:gap-y-16 md:gap-y-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 md:gap-x-10 gap-y-16 md:gap-y-24">
           {filteredChampions.map((champion, idx) => (
             <div 
               key={idx} 
@@ -193,57 +172,57 @@ const ChampionsShowcase: React.FC = () => {
 
       {/* Profile Modal */}
       {selectedChampion && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-12 overflow-hidden">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 md:p-12 overflow-hidden">
           <div 
             className="absolute inset-0 bg-black/98 backdrop-blur-3xl animate-in fade-in duration-300 cursor-pointer" 
             onClick={closeModal}
           />
-          <div className="relative w-full max-w-7xl bg-white h-full max-h-[95vh] overflow-y-auto rounded-none flex flex-col lg:flex-row shadow-[0_0_120px_rgba(0,0,0,0.6)] border border-white/5 animate-in zoom-in-95 duration-500 slide-in-from-bottom-10">
+          <div className="relative w-full max-w-7xl bg-white h-full max-h-[100vh] sm:max-h-[95vh] overflow-y-auto rounded-none flex flex-col lg:flex-row shadow-[0_0_120px_rgba(0,0,0,0.6)] border border-white/5 animate-in zoom-in-95 duration-500 slide-in-from-bottom-10">
             <button 
               onClick={closeModal}
-              className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center bg-black text-white hover:bg-[#ff00ff] transition-all hover:scale-110 active:scale-95"
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 z-30 w-10 h-10 sm:w-16 sm:h-16 flex items-center justify-center bg-black text-white hover:bg-[#ff00ff] transition-all hover:scale-110 active:scale-95 shadow-xl"
             >
-              <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
 
-            <div className="w-full lg:w-1/2 h-[50vh] lg:h-auto bg-black relative overflow-hidden group">
+            <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-auto bg-black relative overflow-hidden group shrink-0">
               <ImageWithFallback 
                 src={selectedChampion.imageUrl} 
                 alt={selectedChampion.name} 
-                className="w-full h-full opacity-90 transition-transform duration-[2000ms] group-hover:scale-110"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 flex flex-col space-y-4">
-                 <div className="px-6 py-2 border-2 border-[#00f2ea] text-[#00f2ea] font-black text-xs tracking-widest w-fit uppercase">Class of 2025</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 lg:bg-gradient-to-r lg:from-black/60 pointer-events-none"></div>
+              <div className="absolute bottom-6 left-6 sm:bottom-12 sm:left-12 flex flex-col space-y-4">
+                 <div className="px-4 py-2 sm:px-6 border-2 border-[#00f2ea] text-[#00f2ea] font-black text-[10px] sm:text-xs tracking-widest w-fit uppercase bg-black/50 backdrop-blur-sm">Class of 2025</div>
               </div>
             </div>
 
-            <div className="w-full lg:w-1/2 p-6 sm:p-12 lg:p-24 flex flex-col justify-center bg-white">
-              <div className="mb-12 sm:mb-16">
-                <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-8 sm:mb-10">
-                  <div className="flex items-center space-x-3 px-5 py-2 bg-[#00f2ea] text-black shadow-lg">
+            <div className="w-full lg:w-1/2 p-6 sm:p-12 lg:p-24 flex flex-col justify-start lg:justify-center bg-white">
+              <div className="mb-8 sm:mb-16">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-6 mb-6 sm:mb-10">
+                  <div className="flex items-center space-x-2 sm:space-x-3 px-3 py-1.5 sm:px-5 sm:py-2 bg-[#00f2ea] text-black shadow-lg">
                     <img 
                       src={`https://flagcdn.com/w80/${selectedChampion.countryCode.toLowerCase()}.png`} 
                       alt={selectedChampion.country}
-                      className="w-8 h-auto shadow-sm"
+                      className="w-5 sm:w-8 h-auto shadow-sm"
                     />
-                    <span className="text-[11px] font-black uppercase tracking-[0.3em]">
+                    <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]">
                       {selectedChampion.country}
                     </span>
                   </div>
                   <div className="hidden md:block w-12 h-[2px] bg-gray-100"></div>
-                  <span className="text-[#ff00ff] text-[11px] font-black uppercase tracking-[0.3em]">
+                  <span className="text-[#ff00ff] text-[10px] sm:text-[11px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]">
                     {selectedChampion.category}
                   </span>
                 </div>
                 
-                <h2 className="text-5xl sm:text-6xl lg:text-[100px] font-black text-black uppercase tracking-tighter leading-[0.8] mb-8">
+                <h2 className="text-4xl sm:text-6xl lg:text-[80px] xl:text-[100px] font-black text-black uppercase tracking-tighter leading-[0.9] mb-4 sm:mb-8 break-words">
                   {selectedChampion.name}
                 </h2>
-                <p className="text-xl sm:text-2xl font-bold text-gray-400 font-syne uppercase tracking-tight leading-snug">{selectedChampion.role}</p>
-                <div className="w-32 h-2 sm:h-4 bg-black mt-8 sm:mt-12 flex">
+                <p className="text-lg sm:text-2xl font-bold text-gray-400 font-syne uppercase tracking-tight leading-snug">{selectedChampion.role}</p>
+                <div className="w-24 sm:w-32 h-2 sm:h-4 bg-black mt-6 sm:mt-12 flex">
                     <div className="w-1/3 h-full bg-[#00f2ea]"></div>
                     <div className="w-1/3 h-full bg-[#ff00ff]"></div>
                     <div className="w-1/3 h-full bg-[#ff9900]"></div>
@@ -251,15 +230,15 @@ const ChampionsShowcase: React.FC = () => {
               </div>
 
               <div className="max-w-3xl">
-                <p className="text-gray-700 leading-relaxed text-lg sm:text-xl font-medium mb-12 sm:mb-16 font-outfit">
+                <p className="text-gray-700 leading-relaxed text-base sm:text-xl font-medium mb-10 sm:mb-16 font-outfit">
                    {selectedChampion.bio}
                 </p>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t-[6px] border-black pt-12 sm:pt-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 border-t-[6px] border-black pt-10 sm:pt-16 pb-6">
                   {selectedChampion.socials.linkedin && (
                     <a href={selectedChampion.socials.linkedin} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
-                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Professional</span>
-                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#00f2ea] pb-2 w-fit transition-all">
+                      <span className="text-[10px] sm:text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 sm:mb-3">Professional</span>
+                      <span className="inline-flex items-center text-base sm:text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#00f2ea] pb-2 w-fit transition-all">
                         LinkedIn
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -269,8 +248,8 @@ const ChampionsShowcase: React.FC = () => {
                   )}
                   {selectedChampion.socials.twitter && (
                     <a href={selectedChampion.socials.twitter} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
-                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Ecosystem</span>
-                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff00ff] pb-2 w-fit transition-all">
+                      <span className="text-[10px] sm:text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 sm:mb-3">Ecosystem</span>
+                      <span className="inline-flex items-center text-base sm:text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff00ff] pb-2 w-fit transition-all">
                         X / Twitter
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -280,8 +259,8 @@ const ChampionsShowcase: React.FC = () => {
                   )}
                   {selectedChampion.socials.website && (
                     <a href={selectedChampion.socials.website} target="_blank" rel="noopener noreferrer" className="flex flex-col group/link">
-                      <span className="text-[11px] font-black text-gray-400 uppercase tracking-widest mb-3">Venture</span>
-                      <span className="inline-flex items-center text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff9900] pb-2 w-fit transition-all">
+                      <span className="text-[10px] sm:text-[11px] font-black text-gray-400 uppercase tracking-widest mb-2 sm:mb-3">Venture</span>
+                      <span className="inline-flex items-center text-base sm:text-lg font-black uppercase border-b-4 border-transparent group-hover/link:border-[#ff9900] pb-2 w-fit transition-all">
                         Website
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2 opacity-50 group-hover/link:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
